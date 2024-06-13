@@ -1,1 +1,20 @@
+Series Category: ARITHMETIC
+First Term: 3, Common Difference: 3, Number of Terms: 1
+Sum: 3
+
+Series Category: ARITHMETIC
+First Term: 1, Common Difference: 2, Number of Terms: 3
+Sum: 9
+
+Series Category: GEOMETRIC
+First Term: 1, Common Ratio: 2, Number of Terms: 3
+Sum: 7
+
+Series Category: FIBONACCI
+Number of Terms: 7
+Sum: 20
+
+Series Category: SQUARE
+Number of Terms: 3
+Sum: 14
 
