@@ -1,1 +1,31 @@
+public class Calculator {
 
+    // Recursive method for Arithmetic
+    public static int arithmeticSum(int a, int d, int n) {
+        //Stops from recursing infintely
+        if (n == 0) return 0;
+        return a + arithmeticSum(a + d, d, n - 1);
+    }
+
+    // Recursive method for Geometric
+    public static int geometricSum(int a, int r, int n) {
+        if (n == 0) return 0;
+        return a + geometricSum(a * r, r, n - 1);
+    }
+
+    // Recursive method for Fibonacci
+    public static int fibonacciSum(int n) {
+        return fibonacciSumHelper(0, 1, n);
+    }
+
+    private static int fibonacciSumHelper(int a, int b, int n) {
+        if (n == 0) return 0;
+        return a + fibonacciSumHelper(b, a + b, n - 1);
+    }
+
+    // Recursive method for the sum of squares
+    public static int squareSum(int n) {
+        if (n == 0) return 0;
+        return n * n + squareSum(n - 1);
+    }
+}
