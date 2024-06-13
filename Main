@@ -1,1 +1,53 @@
+import java.util.Scanner;
 
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("What type of series do you want toc calculate? (ARITHMETIC, GEOMETRIC, FIBONACCI, SQUARE): ");
+        Category category = Category.valueOf(scanner.next());
+
+        System.out.println("How many terms would you like to use?: ");
+        int n = scanner.nextInt();
+
+        int sum = 0;
+        StringBuilder result = new StringBuilder("Series Category: " + category + "\n");
+        //switch case to choose which one you want to run
+        switch (category) {
+            case ARITHMETIC:
+                //starting num
+                System.out.println("Enter the first term: ");
+                int a = scanner.nextInt();
+                //diff between each value
+                System.out.println("Enter the common difference: ");
+                int d = scanner.nextInt();
+                sum = Calculator.arithmeticSum(a, d, n);
+                result.append("First Term: ").append(a).append(", Common Difference: ").append(d).append(", Number of Terms: ").append(n).append("\n");
+                break;
+
+            case GEOMETRIC:
+                System.out.println("Enter the first term: ");
+                a = scanner.nextInt();
+                //ratio between 2 values
+                System.out.println("Enter the common ratio: ");
+                int r = scanner.nextInt();
+                sum = Calculator.geometricSum(a, r, n);
+                result.append("First Term: ").append(a).append(", Common Ratio: ").append(r).append(", Number of Terms: ").append(n).append("\n");
+                break;
+
+            case FIBONACCI:
+                sum = Calculator.fibonacciSum(n);
+                result.append("Number of Terms: ").append(n).append("\n");
+                break;
+
+            case SQUARE:
+                sum = Calculator.squareSum(n);
+                result.append("Number of Terms: ").append(n).append("\n");
+                break;
+        }
+        result.append("Sum: ").append(sum).append("\n");
+        TXTOutput.writeToFile("outputFile.txt", result.toString());
+
+        System.out.println("Results are printed to the txt file outputFile.");
+    }
+}
